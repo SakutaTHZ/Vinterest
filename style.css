@@ -338,6 +338,7 @@ button:hover{
 
     .comments{
         position: absolute;
+        overflow: hidden;
         width: 0px;
         height: 100%;
         background:var(--box-color);
@@ -345,17 +346,91 @@ button:hover{
         left: 98%;
         z-index: -5;
         opacity: 0;
+        padding:  15px 20px 15px 40px;
         border-radius: 0 20px 20px 0;
-        transition:all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);               
+        transition:all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);  
+        .userComments{
+            height: 85%;
+        }       
+        .commentBox{
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            height: 15%;
+            border-radius: 20px;
+            gap: 5px;
+            textarea{
+                resize: none;
+                width: 100%;
+                border: 0;
+                border-radius: 10px;
+                border: 10px solid var(--sec-color);
+                z-index: 5;
+                outline: none;
+                padding: 5px;
+            }
+            button{
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 40px;
+                aspect-ratio: 1/1;
+                border-radius: 50%;
+                border: 0;
+                z-index: 5;
+                span{
+                    font-size: 1.2em;
+                }
+                transform: translateX(-5px) translateY(-8px);
+            }
+            .emoji{
+                position: absolute;
+                top: -5px;
+                right: 0;
+                width: 30px;
+                aspect-ratio: 1/1;
+                background: var(--sec-color);
+                color: var(--box-color);
+            }
+        }      
+        
+        .commentBox:before{
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: var(--sec-color);
+            right: 0;
+            border-radius: 0 20px 20px 0;
+        }
+        .commentBox:after{
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            box-shadow:-15px 15px var(--sec-color);
+            right: 0px;
+            bottom: 50px;
+            border-radius:  0 0 0 20px;
+        }
     }
 }
 
 .card.commentOpened{
-    transform: translateX(-50%);
+    transform: translateX(-65%);
     .comments{
         width: 400px;
         opacity: 1;
     }
+    .contentBox{
+        .imagesBox{
+            .captionBox{
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+}
 }
 
 
