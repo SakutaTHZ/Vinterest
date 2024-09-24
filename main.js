@@ -22,3 +22,10 @@ const card = document.querySelector('.card')
 commentButton.addEventListener('click',()=>{
     card.classList.toggle('commentOpened')
 })
+
+const commentReactionButtons = document.querySelectorAll('.commentButton')
+commentReactionButtons.forEach(element => {
+    element.addEventListener('click',()=>{
+        element.classList.toggle('active')
+    })
+});
